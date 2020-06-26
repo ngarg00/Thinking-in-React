@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Search from './Search';
+import ElectroniGoods from './ElectronicGoods';
 export class Board extends Component {
     state = {
         goods: [
@@ -15,7 +16,8 @@ export class Board extends Component {
         return (
             <div className="container">
                 <h4 className="center">Stock</h4>
-               <Search/>
+                <Search/>
+                <ElectroniGoods goods={this.state.goods}/>
             </div>
         )
     }
