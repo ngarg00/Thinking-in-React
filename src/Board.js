@@ -14,6 +14,7 @@ export class Board extends Component {
     render() {
         return (
             <div className="container">
+                <h4 className="center">Stock</h4>
                <Search/>
             </div>
         )
