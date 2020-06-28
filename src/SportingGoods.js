@@ -10,7 +10,7 @@ const SportingGoods = ({goods,showOnlyStocked}) => {
             { allGoods.map(good => {
                 let id = Math.random();
                 return good.category === "Sporting Goods" ? (
-                    <p key={id}><b>{good.name} :</b> {good.price}</p>
+                    <p key={id} className={good.stocked + "stocked"}><b>{good.name} :</b> {good.price}</p>
                 ) : (
                     null
                 )
