@@ -4,17 +4,13 @@ const ElectronicGoods = ({goods}) => {
     return (
         <div className="container">
             <h4>Electronic Goods</h4>
-            {goods.map(good => {
-                    if(good.category === "Electronics"){
-                        return(
-                            <p>{good.name} + " " + {good.price}</p>
-                        )
-                    }else{
-                        return (
-                            null
-                        )
-                    }
-                    
+            { goods.map(good => {
+                let id = Math.random();
+                return good.category === "Electronics" ? (
+                    <p key={id}><b>{good.name} :</b> {good.price}</p>
+                ) : (
+                    null
+                )
             })}
         </div>
     )
