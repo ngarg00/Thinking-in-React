@@ -1,7 +1,6 @@
 import React from 'react'
 
-const SportingGoods = ({goods}) => {
-    const showOnlyStocked = false;
+const SportingGoods = ({goods,showOnlyStocked}) => {
     const allGoods = showOnlyStocked ? goods.filter(good => {
         return good.stocked === true
     }) : goods;

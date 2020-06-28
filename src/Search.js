@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Search = ({handleStocked}) => {
+const Search = ({ handleStocked }) => {
     return (
         <div className="container">
             <form action="">
@@ -14,8 +14,12 @@ const Search = ({handleStocked}) => {
                     <div className="col s2"><button className="btn red">Serach</button></div>
                 </div>
                 <div className="input-field">
-                    <input type="checkbox"/>
-                    <span>Only Show products in stock</span>
+                    <p>
+                        <label>
+                            <input type="checkbox" onClick={handleStocked}/>
+                            <span>Only Show products in stock</span>
+                        </label>
+                    </p>
                 </div>
             </form>
         </div>

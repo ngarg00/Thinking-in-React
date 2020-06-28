@@ -21,13 +21,12 @@ export class Board extends Component {
         })
     }
     render() {
-        console.log(this.state.showOnlyStocked)
         return (
             <div className="container">
                 <h4 className="center">Stock</h4>
                 <Search handleStocked={this.handleStocked}/>
-                <ElectronicGoods goods={this.state.goods}/>
-                <SportingGoods goods={this.state.goods}/>
+                <ElectronicGoods showOnlyStocked={this.state.showOnlyStocked} goods={this.state.goods}/>
+                <SportingGoods showOnlyStocked={this.state.showOnlyStocked} goods={this.state.goods}/>
             </div>
         )
     }
