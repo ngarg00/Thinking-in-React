@@ -1,13 +1,23 @@
 import React from 'react'
 
-const Search = ({ handleStocked }) => {
+const Search = ({ handleStocked, handleSearch }) => {
+    let value = null;
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        handleSearch(value);
+    }
+
+    const handleChange = (e)=>{
+        value = e.target.value;
+        handleSearch(value);
+    }
     return (
         <div className="container">
-            <form action="">
+            <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="col s8">
                         <div className="input-field">
-                            <input type="text" id="search" />
+                            <input type="text" id="search" onChange={handleChange}/>
                             <label htmlFor="search">Search</label>
                         </div>
                     </div>

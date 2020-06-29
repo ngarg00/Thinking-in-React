@@ -12,7 +12,14 @@ export class Board extends Component {
             {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
             {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
           ],
-        showOnlyStocked: false
+        showOnlyStocked: false,
+        searchedValue : null
+    }
+
+    handleSearch = (searchedValue) => {
+        this.setState({
+            searchedValue: searchedValue
+        })
     }
 
     handleStocked = ()=>{
@@ -24,9 +31,9 @@ export class Board extends Component {
         return (
             <div className="container">
                 <h4 className="center">Stock</h4>
-                <Search handleStocked={this.handleStocked}/>
-                <ElectronicGoods showOnlyStocked={this.state.showOnlyStocked} goods={this.state.goods}/>
-                <SportingGoods showOnlyStocked={this.state.showOnlyStocked} goods={this.state.goods}/>
+                <Search handleSearch={this.handleSearch} handleStocked={this.handleStocked}/>
+                <ElectronicGoods searchedValue={this.state.searchedValue} showOnlyStocked={this.state.showOnlyStocked} goods={this.state.goods}/>
+                <SportingGoods searchedValue={this.state.searchedValue} showOnlyStocked={this.state.showOnlyStocked} goods={this.state.goods}/>
             </div>
         )
     }
